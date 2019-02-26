@@ -1,0 +1,15 @@
+{
+  "name": "learn-math",
+  "version": "1.0.0",
+  "description": "A website for kids to learn math",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Apoorva Teli",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
