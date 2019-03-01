@@ -1,4 +1,33 @@
 <% include partials/header %>
 <link rel="stylesheet" href="/css/home-style.css" type="text/css">
 
+<div id="quiz">
+
+  <div class="container h1">
+    <div class="text-center">Math4Kids</div>
+    <div class="row stats">
+      <div class="col-sm" id="level">
+        Level: 1
+      </div>
+      <div class="col-sm text-right" id="score">
+        Score: 2/2
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center" id="solve">
+    <span> 
+      <span id="num1">6</span> 
+      <!-- <i class="fas fa-futbol" id="icon1"></i> -->
+      <span id="icon1"></span>
+      <span id="operator">+</span> 
+      <span id="num2">4</span> 
+      <!-- <i class="fas fa-volleyball-ball" id="icon2"></i> -->
+      <span id="icon2"></span> = 
+    </span>
+    <input type="text" name="answer" autofocus />
+  </div>
+
+</div>
+
 <% include partials/footer %>
