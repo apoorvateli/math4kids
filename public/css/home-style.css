@@ -35,7 +35,7 @@ html {
 
 #correct_ans {
 	font-size: 2em;
-	color: rgb(48, 133, 214);
+	color: #007bff;
 }
 
 input {
@@ -45,7 +45,7 @@ input {
   font-size: 1.75em;
   font-weight: bold;
   line-height: 1.2;
-  color:rgb(48, 133, 214);
+  color:#007bff;
   border: none;
   border-bottom: 5px solid black;
   background: none;
