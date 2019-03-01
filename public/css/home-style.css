@@ -69,8 +69,10 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 2.6rem;
     font-family: 'Fredoka One', cursive;
   }
-
+  
   input {
     margin: .5em;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
   }
 }
