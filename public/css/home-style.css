@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  background: url(https://source.unsplash.com/l3N9Q27zULw);
-  /* background-size: cover;
-  background-position: center;  */
+  background: url(https://source.unsplash.com/fGZ2x8wFxC0);
+  background-size: cover;
+  background-position: center; 
 }
 
 html {
@@ -22,31 +24,53 @@ html {
   line-height: 1.2;
 	padding: 0.5em;
   color: black;
-}
-
-#icon1, #icon2 {
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
 }
 
+#score, #level, #correct_ans {
+  font-family: 'Fredoka One', cursive;
+}
+
 #correct_ans {
-	font-family: 'Verdana';
 	font-size: 2em;
-	color: rgb(48, 133, 214);;
-	/* text-shadow: 4px 3px 5px #3e9a65; */
+	color: rgb(48, 133, 214);
 }
 
 input {
 	font-family: cursive;
 	text-align: center;
-    width: 2em;
-    font-size: 1.75em;
-    font-weight: bold;
-    line-height: 1.2;
-    color: blue;
-    border: none;
-    border-bottom: 5px solid black;
-    background: none;
-    outline: none;
+  width: 2em;
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 1.2;
+  color:rgb(48, 133, 214);
+  border: none;
+  border-bottom: 5px solid black;
+  background: none;
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  #score {
+    text-align: right;
+  }
+}
+
+/* medium devices and down */
+@media (max-width: 767.98px) {
+  #solve {
+    font-size: 2.6rem;
+    font-family: 'Fredoka One', cursive;
+  }
+
+  input {
+    margin: .5em;
+  }
 }
