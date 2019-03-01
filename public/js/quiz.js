@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded',function() {
 				break;
 			case 3:
 				operators = ['*', '/'];
-				range = [1,20];
+				range = [2,10];
 				break;
 			case 4:
 				operators = ['+', '-', '*', '/'];
-				range = [1,50];
+				range = [1,20];
 				break;
 		}
 	}
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
 	function generateQuestion() {
 		score.innerHTML = `Score: ${userScore} / ${totalQuestions}`;
-		level.innerHTML = `Level: ${userLevel}`;
+		level.innerHTML = `Level: ${userLevel} / 4`;
 		setOperatorsAndRange();
 		num1 = randomNumber(range[0],range[1]);
 		num2 = randomNumber(range[0],range[1]);
@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded',function() {
     // set progress bar width
     progressBar.setAttribute("style", "width: "+ ((userScore*10)%100) + "%");
     progressBar.setAttribute("aria-valuenow", (userScore*10)%100);
-    console.log((userScore*10)%100);
 	}
 
   generateQuestion();
@@ -123,7 +122,7 @@ document.addEventListener('DOMContentLoaded',function() {
 						focus = false;
 					}.bind(this));
 				}
-				if(userLevel === 6) {
+				if(userLevel === 5) {
 					this.blur();
 					swal({
             title: 'Congratulations!',
