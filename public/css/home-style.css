@@ -65,18 +65,27 @@ input[type=number]::-webkit-inner-spin-button {
   #score {
     text-align: right;
   }
+
+  #score, #level {
+    font-size: 1.5em;
+    margin: .5em 0 .3em 0;    
+  }
+
+  #solve {
+    margin-top: .7em;
+  }
 }
 
 /* medium devices and down */
 @media (max-width: 767.98px) {
-  #solve {
-    font-size: 2.6rem;
+  #solve, input {
+    font-size: 2.5em;
     font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
   }
   
   input {
-    margin: .5em;
-    font-family: 'Fredoka One', cursive;
-    font-weight: lighter;
+    height: 1em;
+    margin-top: .2em;
   }
 }
