@@ -24,14 +24,10 @@ document.addEventListener('DOMContentLoaded',function() {
 				range = [30,50];
 				break;
 			case 3:
-				operators = ['+', '-', '*'];
+				operators = ['*', '/'];
 				range = [1,20];
 				break;
 			case 4:
-				operators = ['*', '/'];
-				range = [1,30];
-				break;
-			case 5:
 				operators = ['+', '-', '*', '/'];
 				range = [1,50];
 				break;
@@ -70,11 +66,11 @@ document.addEventListener('DOMContentLoaded',function() {
     operatorElement.innerHTML = `${randomOperator}`;
     
     // generate random icon
-    var randomIcon1 = Math.floor(Math.random()*(iconArray.length));
+    var randomIcon = Math.floor(Math.random()*(iconArray.length));
     // var randomIcon2 = Math.floor(Math.random()*(iconArray.length));
-    icon1.innerHTML = '<i class="fas fa-' + iconArray[randomIcon1] + '"></i>';
-    icon2.innerHTML = '<i class="fas fa-' + iconArray[randomIcon1] + '"></i>';
-
+    icon1.innerHTML = '<i class="fas fa-' + iconArray[randomIcon] + '"></i>';
+    icon2.innerHTML = '<i class="fas fa-' + iconArray[randomIcon] + '"></i>';
+    
     // set progress bar width
     progressBar.setAttribute("style", "width: "+ ((userScore*10)%100) + "%");
     progressBar.setAttribute("aria-valuenow", (userScore*10)%100);
@@ -106,8 +102,8 @@ document.addEventListener('DOMContentLoaded',function() {
 					this.blur();
 					swal({
 					  title: "Awww Nooo!",
-					  html: `<span id='correct_ans'>The correct answer is <div>${num1} ${randomOperator} ${num2} = ${result}</div></span>`,
-					  type: 'error'
+            html: '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX_W0JK7sGzFVmzGqk13wnReWeWkfYSuTfdg4YSsXMHIp8CJhFdQ">'+
+            `<div class='message'>The correct answer is <div>${num1} ${randomOperator} ${num2} = ${result}</div></div>`
 					}).then(function() {
 						this.focus();
 						focus = false;
@@ -118,11 +114,11 @@ document.addEventListener('DOMContentLoaded',function() {
 				userLevel = Math.floor(userScore / 10) + 1;
 				if(currentLevel !== userLevel) {
 					this.blur();
-					swal(
-					  'Yasss! Good job!',
-					  `You reached Level ${userLevel}!`,
-					  'info'
-					).then(function() {
+					swal({
+					  title: 'Yay! Good job human!',
+            html: '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbkmJVTEEaOLcaXt55l77ZaEM-eF4OMpLM4zvZQjI7d4A92PfItA">'+
+					  `<div class="message">You reached Level ${userLevel}!</div>`
+          }).then(function() {
 						this.focus();
 						focus = false;
 					}.bind(this));
@@ -130,8 +126,9 @@ document.addEventListener('DOMContentLoaded',function() {
 				if(userLevel === 6) {
 					this.blur();
 					swal({
-					  title: 'Congratulations!',
-					  text: `You completed the quiz`,
+            title: 'Congratulations!',
+            html: '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzVeD4o2VfIjRepKCU6mwzxJ931nHhVTflChLlFPh-d97p7YSG">'+            
+					  `<div class="message">You completed the quiz</div>`,
 					  type: 'success',
 					  confirmButtonText: 'Restart the quiz'
 					}).then(function () {
