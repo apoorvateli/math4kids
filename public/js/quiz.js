@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded',function() {
 	const level = quiz.querySelector('#level');
 	const num1Element = quiz.querySelector('#num1');
 	const num2Element = quiz.querySelector('#num2');
-	const operatorElement = quiz.querySelector('#operator');
+  const operatorElement = quiz.querySelector('#operator');
+  const progressBar = quiz.querySelector(".progress-bar");
 
   const icon1 = quiz.querySelector('#icon1');
   const icon2 = quiz.querySelector('#icon2');
@@ -73,6 +74,11 @@ document.addEventListener('DOMContentLoaded',function() {
     // var randomIcon2 = Math.floor(Math.random()*(iconArray.length));
     icon1.innerHTML = '<i class="fas fa-' + iconArray[randomIcon1] + '"></i>';
     icon2.innerHTML = '<i class="fas fa-' + iconArray[randomIcon1] + '"></i>';
+
+    // set progress bar width
+    progressBar.setAttribute("style", "width: "+ ((userScore*10)%100) + "%");
+    progressBar.setAttribute("aria-valuenow", (userScore*10)%100);
+    console.log((userScore*10)%100);
 	}
 
   generateQuestion();
